@@ -12,15 +12,13 @@ class Services extends Seeder
 		'Intensive Care Unit (ICU)',
 		'Emergency Room (ER)',
 		'Labor & Delivery',
-		'Nursery',
 		'Cardiac Care',
-		'Cafeteria',
-		'Gift Shop',
 		'Lab',
 		'Pharmacy',
 		'Neonatal Intensive Care Unit (NICU)',
 		'Morgue',
 		'Pediatrics',
+		'X-ray',
 	];
 
 
