@@ -45,9 +45,13 @@ class FacilityDrug extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('HealthFacility', 'healthFacility')->sortable(),
+            BelongsTo::make('HealthFacility', 'healthFacility')
+                ->sortable()
+                ->searchable(),
 
-            BelongsTo::make('Drug', 'drug')->sortable(),
+            BelongsTo::make('Drug', 'drug')
+                ->sortable()
+                ->searchable(),
 
             Money::make('Unit Price', 'NGN'),
 

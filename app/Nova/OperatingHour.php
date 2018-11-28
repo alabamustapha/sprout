@@ -23,7 +23,7 @@ class OperatingHour extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'day';
 
     /**
      * The columns that should be searched.
@@ -46,7 +46,9 @@ class OperatingHour extends Resource
 
             ID::make()->sortable(),
 
-            BelongsTo::make('HealthFacility', 'healthFacility'),
+            BelongsTo::make('HealthFacility', 'healthFacility')
+                ->searchable()
+                ->sortable(),
 
             Select::make('Day')->options([
                 '1' => 'Sunday',

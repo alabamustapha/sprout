@@ -23,7 +23,7 @@ class Practitioner extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -45,9 +45,11 @@ class Practitioner extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('HealthFacility', 'healthFacility'),
+            BelongsTo::make('HealthFacility', 'healthFacility')
+                ->searchable(),
 
-            BelongsTo::make('Designation', 'designation'),
+            BelongsTo::make('Designation', 'designation')
+                ->searchable(),
 
             Text::make('Name')
                 ->sortable()
