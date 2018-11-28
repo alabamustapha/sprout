@@ -15,8 +15,8 @@ class CreateHealthFacilitiesTable extends Migration
     {
         Schema::create('health_facilities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ward_id');
-            $table->integer('facility_manager_id');
+            $table->integer('ward_id')->nullable();
+            $table->integer('facility_manager_id')->nullable();
             $table->string('global_id');
             $table->string('name');
             $table->string('type');

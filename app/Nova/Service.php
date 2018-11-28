@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -20,7 +21,7 @@ class Service extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -41,6 +42,11 @@ class Service extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name')
+                ->rules('required', 'max:254')
+                ->creationRules('unique:services,name')
+                ->updateRules('unique:services,name,{{resourceId}}'),
         ];
     }
 

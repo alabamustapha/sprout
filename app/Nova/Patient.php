@@ -3,6 +3,9 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -41,6 +44,20 @@ class Patient extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            BelongsTo::make('HealthFacility', 'healthFacility'),
+
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Phone')
+                ->sortable()
+                ->rules('required', 'min:11', 'max:13'),
+
+            Date::make('Date of Birth', 'dob')
+                ->sortable()
+                ->rules('required'),
         ];
     }
 

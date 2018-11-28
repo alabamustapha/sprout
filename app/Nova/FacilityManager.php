@@ -6,7 +6,9 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\PasswordConfirmation;
 use Laravel\Nova\Fields\Country;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -25,7 +27,7 @@ class FacilityManager extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -61,16 +63,19 @@ class FacilityManager extends Resource
                 ->sortable()
                 ->rules('required', 'email', 'max:254'),
 
-            Text::make('Phone')
-                ->sortable()
-                ->rules('required', 'min:11', 'max:13'),
-
-            $this->addressFields(),
-
             Password::make('Password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            PasswordConfirmation::make('Password Confirmation'),
+
+            Text::make('Phone')
+                ->sortable()
+                ->rules('required', 'min:11', 'max:13'),
+
+            TextArea::make('Address'),
+
         ];
     }
 

@@ -15,4 +15,9 @@ class OperatingHour extends Model
 
     protected $hidden = [
     ];
+
+    public function healthFacility()
+    {
+    	return $this->belongsTo(HealthFacility::class);
+    }
 }
