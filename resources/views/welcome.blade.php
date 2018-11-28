@@ -22,13 +22,8 @@
 								</div>
 								<div class="col-lg-3">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Where" placeholder="State" value="Kaduna" disabled>
-										<i class="icon_pin_alt"></i>
-									</div>
-								</div>
-								<div class="col-lg-3">
-									<select class="wide" name="lga_name" id="lga_name">
-											<option value="">All</option>
+										<select class="wide" name="lga_name" id="lga_name">
+											<option value="">Select LGA</option>
 											<option value="Birnin Gwari">Birnin Gwari</option>
 											<option value="Chikun">Chikun</option>
 											<option value="Giwa">Giwa</option>
@@ -53,6 +48,17 @@
 											<option value ="Zangon Kataf">Zangon Kataf</option>
 											<option value ="Zaria">Zaria</option>
 									</select>
+										<i class="icon_pin_alt"></i>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<select class="wide" name="ward_name" id="ward_name">
+										<option value="">Select Ward</option>
+										<option value="Birnin Gwari">Birnin Gwari</option>
+										<option value="Chikun">Chikun</option>
+										<option value="Giwa">Giwa</option>
+								
+								</select>
 								</div>
 								<div class="col-lg-2">
 									<input type="submit" value="Search" id="#load-more">
