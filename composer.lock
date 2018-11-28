@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "88efe05b78c03896f5843c3519a5c0f9",
-    "content-hash": "4ce673ddce44cec36db68c7e9acb86c2",
+    "hash": "f6e782fce265a5ac2d67acdfdfa4add5",
+    "content-hash": "57d0cd808abbc60598715c267a179ac7",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -62,7 +62,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-10-18 22:02:21"
+            "time": "2018-10-18T22:02:21+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -190,7 +190,7 @@
                 "slug",
                 "sluggable"
             ],
-            "time": "2018-09-05 02:03:48"
+            "time": "2018-09-05T02:03:48+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -1080,7 +1080,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "3f3e9f1b67293b957f5c96da00a8da56f7e263ff",
+                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
                 "shasum": null
             },
             "require": {
@@ -1577,7 +1577,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-10-01 18:56:20"
+            "time": "2018-10-01T18:56:20+00:00"
         },
         {
             "name": "moneyphp/money",
@@ -1657,7 +1657,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2018-02-16 11:04:16"
+            "time": "2018-02-16T11:04:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3625,7 +3625,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-11-22 22:33:32"
+            "time": "2018-11-22T22:33:32+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
