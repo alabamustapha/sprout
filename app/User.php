@@ -37,6 +37,7 @@ class User extends Authenticatable
 
     public function healthFacility()
     {
-        return $this->hasOne(HealthFacility::class);
+        return $this->hasMany(HealthFacility::class, 'facility_manager_id')->first();
     }
+
 }

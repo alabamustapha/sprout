@@ -31,7 +31,7 @@ class OperatingHour extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'day',
     ];
 
     /**

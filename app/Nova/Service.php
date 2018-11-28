@@ -29,8 +29,13 @@ class Service extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
+
+    public static function availableForNavigation(Request $request)
+    {
+        return Auth()->user()->role === 1;
+    }
 
     /**
      * Get the fields displayed by the resource.

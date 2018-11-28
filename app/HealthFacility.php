@@ -25,24 +25,24 @@ class HealthFacility extends Model
             ]
         ];
 	}
-	
+
     protected $fillable = [
-		'global_id', 
-		'latitude', 
-		'longitude', 
-		'lga_name', 
-		'name', 
+		'global_id',
+		'latitude',
+		'longitude',
+		'lga_name',
+		'name',
 		'slug',
-		'state_name', 
-		'type', 
-		'ward_name', 
-		'ownership', 
-		'alternate_name', 
-		'functional_status', 
-		'ri_service_status', 
-		'ward_code', 
-		'lga_code', 
-		'state_code', 
+		'state_name',
+		'type',
+		'ward_name',
+		'ownership',
+		'alternate_name',
+		'functional_status',
+		'ri_service_status',
+		'ward_code',
+		'lga_code',
+		'state_code',
 		'type',
 		'address',
     	'phone',
@@ -58,22 +58,22 @@ class HealthFacility extends Model
 
     public function owner()
     {
-        return $this->belongsTo(FacilityManager::class);
+        return $this->belongsTo(User::class, 'facility_manager_id');
 	}
 
 	public function services(){
 		return $this->belongsToMany('App\Service', 'facility_services', 'health_facility_id', 'service_id');
 	}
-	
+
 	public function reviews(){
 		return $this->hasMany('App\Review');
 	}
-	
-	
+
+
 	public function getRateAttribute(){
 		return $this->reviews->count() > 0 ? $this->reviews->avg('rate') : 'N/A';
 	}
-	
+
 	/**
 	 * Get the route key for the model.
 	 *
@@ -82,6 +82,6 @@ class HealthFacility extends Model
 	public function getRouteKeyName()
 	{
 		return 'slug';
-	
+
     }
 }

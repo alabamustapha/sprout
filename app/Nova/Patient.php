@@ -31,7 +31,8 @@ class Patient extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
+        'phone',
     ];
 
     /**
@@ -45,7 +46,7 @@ class Patient extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('HealthFacility', 'healthFacility')
+            BelongsTo::make('HealthFacilities', 'healthFacility')
                 ->searchable()
                 ->sortable(),
 
