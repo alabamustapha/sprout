@@ -16,7 +16,6 @@
                             <li><a href="#0">Help</a></li>
                             <li><a href="{{ route('login') }}">My account</a></li>
                             <li><a href="{{ route('register') }}">Create account</a></li>
-                            <li><a href="#0">Contacts</a></li>
                         </ul>
                     </div>
                 </div>

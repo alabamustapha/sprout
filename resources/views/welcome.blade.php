@@ -116,33 +116,7 @@
 				<div class="row add_bottom_30">
 					@foreach($facilities as $facility)
 					
-<<<<<<< HEAD
-						<div class="col-md-4">
-							<div class="strip grid">
-								<figure>
-									<a href="#0" class="wish_bt"></a>
-									<a href="detail-restaurant.html"><img src="img/hospital.jpg" class="img-fluid" alt="">
-										<div class="read_more"><span>View Facility</span></div>
-									</a>
-									<small>MF</small>
-								</figure>
-								<div class="wrapper">
-									<small><a href="{{ route('show_facility', $facility['global_id']) }}">{{ strtoupper($facility['name']) }}</a></small>
-									<small>{{ $facility['ward_name'] }}, {{ $facility['state_name'] }}</small><br>
-									{{-- <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p> --}}
-									<a class="address" href="https://www.google.com/maps/dir//{{ $facility['latitude'] . ',' .  $facility['longitude']}}" target="_blank">Get directions</a>
-								</div>
-								<ul>
-									<li><span class="loc_open">Now Open</span></li>
-									<li>
-										<div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
-									</li>
-								</ul>
-							</div>
-						</div>
-=======
 						@include('layouts.partials.facility')
->>>>>>> d77af41eed14fb5efefaa36e6aba2c3458ca9805
 					
 					@endforeach
 					
@@ -175,6 +149,7 @@
 		<!-- /main -->
 
 		@include('layouts.partials.footer')	
+		
 		@include('layouts.partials.signin-popup')	
 	</div>
 	<!-- page -->
