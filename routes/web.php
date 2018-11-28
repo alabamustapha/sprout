@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/facilities/{facility}', 'FacilityController@show')->name('show_facility');
+Route::get('/facilities/{facility}/request_ownership', 'FacilityController@assignOwner')->name('request_ownership');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/get_facilities', 'HomeController@facilities')->name('get_facilities');
+Route::get('/statistics', function(){
+    return view('statistics');
+});
