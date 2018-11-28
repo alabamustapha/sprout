@@ -20,6 +20,7 @@
 					<li><span><a href="#0">Home</a></span></li>
 					<li><span><a href="#0">About us</a></span></li>
 					<li><span><a href="#0">Contact us</a></span></li>
+					<li><span><a href="#0">Statistics</a></span></li>
 				</ul>
 			</nav>
 		</header>

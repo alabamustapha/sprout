@@ -18,3 +18,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/get_facilities', 'HomeController@facilities')->name('get_facilities');
+Route::get('/statistics', function(){
+    return view('statistics');
+});
