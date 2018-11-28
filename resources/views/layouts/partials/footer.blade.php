@@ -101,15 +101,8 @@
                                 </select>
                             </div>
                         </li>
-                        <li>
-                            <div class="styled-select" id="currency-selector">
-                                <select>
-                                    <option value="US Dollars" selected>US Dollars</option>
-                                    <option value="Euro">Euro</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li><img src="img/cards_all.svg" alt=""></li>
+                       
+                      
                     </ul>
                 </div>
                 <div class="col-lg-6">
