@@ -43,9 +43,13 @@ class FacilityService extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Health Facility', 'healthFacility')->sortable(),
+            BelongsTo::make('Health Facility', 'healthFacility')
+                ->sortable()
+                ->searchable(),
 
-            BelongsTo::make('Service', 'service')->sortable(),
+            BelongsTo::make('Service', 'service')
+                ->sortable()
+                ->searchable(),
 
         ];
     }

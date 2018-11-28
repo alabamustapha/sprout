@@ -60,7 +60,8 @@ class HealthFacility extends Resource
             ]),
 
             BelongsTo::make('Facility Manager', 'owner', 'App\Nova\User')
-                ->nullable(),
+                ->nullable()
+                ->searchable(),
 
             Text::make('Phone')
                 ->sortable()
