@@ -58,9 +58,9 @@ class OperatingHour extends Resource
                 '7' => 'Saturday',
             ])->displayUsingLabels(),
 
-            Time::make('Opening Time'),
+            Time::make('Opening Time')->format(),
 
-            Time::make('Closing Time'),
+            Time::make('Closing Time')->format(),
         ];
     }
 

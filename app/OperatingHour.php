@@ -25,4 +25,5 @@ class OperatingHour extends Model
     {
     	return $this->belongsTo(HealthFacility::class);
     }
+
 }
