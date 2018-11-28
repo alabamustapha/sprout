@@ -12,4 +12,9 @@ class Patient extends Model
 
     protected $hidden = [
     ];
+
+    public function healthFacility()
+    {
+    	return $this->belongsTo(HealthFacility::class);
+    }
 }

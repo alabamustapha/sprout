@@ -14,6 +14,7 @@
         "laravel/nova": "*",
         "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0",
+        "michielfb/laravel-nova-time-field": "^1.0",
         "vyuldashev/nova-money-field": "^1.3"
     },
     "require-dev": {

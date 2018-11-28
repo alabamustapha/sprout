@@ -8,8 +8,9 @@ class Practitioner extends Model
 {
     protected $fillable = [
     	'designation_id',
+        'health_facility_id',
     	'name',
-    	'address',
+    	// 'address',
     	'email',
     	'phone',
     	'highest_qualification',
@@ -18,4 +19,14 @@ class Practitioner extends Model
 
     protected $hidden = [
     ];
+
+    public function healthFacility()
+    {
+        return $this->belongsTo(HealthFacility::class);
+    }
+
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class);
+    }
 }

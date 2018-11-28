@@ -22,4 +22,9 @@ class HealthFacility extends Model
 
     protected $hidden = [
     ];
+
+    public function owner()
+    {
+        return $this->belongsTo(FacilityManager::class);
+    }
 }

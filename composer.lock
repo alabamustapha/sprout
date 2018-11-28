@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "407db2af4388c824ac32a74fda8cc283",
-    "content-hash": "daefa47abfd83c8c62857254a61cb268",
+    "hash": "f6e782fce265a5ac2d67acdfdfa4add5",
+    "content-hash": "57d0cd808abbc60598715c267a179ac7",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1409,6 +1409,47 @@
                 "server"
             ],
             "time": "2018-11-21 21:42:43"
+        },
+        {
+            "name": "michielfb/laravel-nova-time-field",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michielfb/laravel-nova-time-field.git",
+                "reference": "ae8a734da967e104094798d7a972c60fa40d3720"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michielfb/laravel-nova-time-field/zipball/ae8a734da967e104094798d7a972c60fa40d3720",
+                "reference": "ae8a734da967e104094798d7a972c60fa40d3720",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Michielfb\\Time\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Michielfb\\Time\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-10-01 18:56:20"
         },
         {
             "name": "moneyphp/money",
