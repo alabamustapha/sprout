@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@search')->name('search');
 Route::get('/facilities/{facility}', 'FacilityController@show')->name('show_facility');
 Route::get('/facilities/{facility}/request_ownership', 'FacilityController@assignOwner')->name('request_ownership');
 
