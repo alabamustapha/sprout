@@ -35,13 +35,14 @@ class HomeController extends Controller
 
         $facilities = [];
 
+        $total_count = $response["totalFeatures"];
         foreach($response["features"] as $feature){
             $properties = array_only($feature["properties"], ['global_id', 'latitude', 'longitude', 'lga_name', 'name', 'state_name', 'type', 'ward_name', 'ownership']);
             array_push($facilities, $properties);
         }
 
         
-        return view('welcome', compact('facilities'));
+        return view('welcome', compact('facilities', 'total_count'));
     }
 
     public function facilities(Request $request)

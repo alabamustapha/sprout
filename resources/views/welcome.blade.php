@@ -11,7 +11,7 @@
 				<div class="wrapper">
 					<div class="container">
 						<h3>Locate Medical Facility!</h3>
-						<p>Discover top medical facilities around you</p>
+						<p>Discover {{ $total_count }} medical facilities in Kaduna</p>
 						<form method="post" action="grid-listings-filterscol.html">
 							<div class="row no-gutters custom-search-input-2">
 								<div class="col-lg-4">
@@ -122,7 +122,7 @@
 									<h3><a href="detail-restaurant.html">{{ $facility['name'] }}</a></h3>
 									<small>{{ $facility['ward_name'] }}, {{ $facility['state_name'] }}</small><br>
 									{{-- <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p> --}}
-									<a class="address" href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+H%C3%B4pitaux+de+Paris+(AP-HP)+-+Si%C3%A8ge!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361">Get directions</a>
+									<a class="address" href="https://www.google.com/maps/dir//{{ $facility['latitude'] . ',' .  $facility['longitude']}}" target="_blank">Get directions</a>
 								</div>
 								<ul>
 									<li><span class="loc_open">Now Open</span></li>
