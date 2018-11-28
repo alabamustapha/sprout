@@ -14,13 +14,9 @@
         "laravel/framework": "5.7.*",
         "laravel/nova": "*",
         "laravel/passport": "^7.0",
-<<<<<<< HEAD
-        "laravel/tinker": "^1.0"
-=======
         "laravel/tinker": "^1.0",
         "michielfb/laravel-nova-time-field": "^1.0",
         "vyuldashev/nova-money-field": "^1.3"
->>>>>>> 816c6654db34c9818cc63d5f5a5d3c2e4038185b
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
