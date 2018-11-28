@@ -3,27 +3,25 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class HealthFacility extends Resource
+class FacilityService extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\HealthFacility';
+    public static $model = 'App\FacilityService';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -45,27 +43,10 @@ class HealthFacility extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')->withMeta(['extraAttributes' => [
-                'disabled' => 'true']
-            ]),
+            BelongsTo::make('Health Facility', 'healthFacility')->sortable(),
 
-            Text::make('Type')->withMeta(['extraAttributes' => [
-                'disabled' => 'true']
-            ]),
+            BelongsTo::make('Service', 'service')->sortable(),
 
-            Text::make('Ownership')->withMeta(['extraAttributes' => [
-                'disabled' => 'true']
-            ]),
-
-            BelongsTo::make('Facility Manager', 'owner')
-                ->nullable(),
-
-            Text::make('Phone')
-                ->sortable()
-                ->rules('required', 'min:11', 'max:13'),
-
-            TextArea::make('Address')
-                ->rules('required'),
         ];
     }
 

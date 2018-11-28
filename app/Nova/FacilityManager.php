@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\PasswordConfirmation;
@@ -48,6 +49,8 @@ class FacilityManager extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            // HasOne::make('Health Facility', 'healthFacility'),
 
             Avatar::make('Image')->disk('public'),
 
