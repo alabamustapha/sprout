@@ -31,6 +31,10 @@ class HomeController extends Controller
         $total_count = HealthFacility::count();
         $total_patients = Patient::count();
 
+        $wards = array_unique(HealthFacility::all()->pluck('ward_name')->toArray());
+
+        $wards = array_sort($wards);
+
         // $http = new Client;
 
         // $url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna')&size=3";
@@ -48,7 +52,7 @@ class HomeController extends Controller
         // }
 
         
-        return view('welcome', compact('facilities', 'total_count', 'total_patients'));
+        return view('welcome', compact('facilities', 'total_count', 'total_patients', 'wards'));
     }
 
     public function facilities(Request $request)

@@ -54,10 +54,9 @@
 								<div class="col-lg-3">
 									<select class="wide" name="ward_name" id="ward_name">
 										<option value="">Select Ward</option>
-										<option value="Birnin Gwari">Birnin Gwari</option>
-										<option value="Chikun">Chikun</option>
-										<option value="Giwa">Giwa</option>
-								
+										@foreach($wards as $index => $name)
+											<option value="{{ $name }}">{{ $name }}</option>
+										@endforeach
 								</select>
 								</div>
 								<div class="col-lg-2">
