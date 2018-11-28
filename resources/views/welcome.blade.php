@@ -75,33 +75,34 @@
 				<div class="container">
 					<ul class="clearfix">
 						<li>
-							<a href="grid-listings-filterscol.html">
+							<a href="#">
 								<i class="icon-hospital"></i>
-								<h3>...</h3>
+								<h3>Facilities</h3>
 							</a>
 						</li>
 						<li>
-							<a href="grid-listings-filterscol.html">
+							<a href="#">
 								<i class="icon-location"></i>
-								<h3>...</h3>
+								<h3>Locations</h3>
 							</a>
 						</li>
 						<li>
-							<a href="grid-listings-filterscol.html">
+							<a href="#">
 								<i class="icon-ambulance"></i>
-								<h3>...</h3>
+								<h3>Emergency</h3>
 							</a>
 						</li>
 						<li>
-							<a href="grid-listings-filterscol.html">
+							<a href="#">
 								<i class="icon-child"></i>
-								<h3>...</h3>
+								<h3>Patients</h3>
+								
 							</a>
 						</li>
 						<li>
 							<a href="grid-listings-filterscol.html">
 								<i class="icon-dot-3"></i>
-								<h3>...</h3>
+								<h3>***</h3>
 							</a>
 						</li>
 					</ul>
