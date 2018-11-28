@@ -12,11 +12,12 @@
 					<div class="container">
 						<h3>Locate Medical Facility!</h3>
 						<p>Discover {{ $total_count }} medical facilities in Kaduna</p>
-						<form method="post" action="grid-listings-filterscol.html">
+						<form method="post" action="{{ route("search") }}" method="POST">
+							@csrf
 							<div class="row no-gutters custom-search-input-2">
 								<div class="col-lg-4">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Locate Medical Facility">
+										<input class="form-control" type="text" placeholder="Facility name" name="name">
 										<i class="icon_search"></i>
 									</div>
 								</div>
@@ -54,14 +55,13 @@
 								<div class="col-lg-3">
 									<select class="wide" name="ward_name" id="ward_name">
 										<option value="">Select Ward</option>
-										<option value="Birnin Gwari">Birnin Gwari</option>
-										<option value="Chikun">Chikun</option>
-										<option value="Giwa">Giwa</option>
-								
+										@foreach($wards as $index => $name)
+											<option value="{{ $name }}">{{ $name }}</option>
+										@endforeach
 								</select>
 								</div>
 								<div class="col-lg-2">
-									<input type="submit" value="Search" id="#load-more">
+									<input type="submit" value="Search">
 								</div>
 							</div>
 							<!-- /row -->
@@ -113,7 +113,24 @@
 			
 			<div class="container margin_60_35">
 				
+					@if(isset($searched_lga) || isset($searched_name) || isset($searched_ward))
+						<h2 class="text-info mb-3">Showing {{ $facilities->count() }} Top rated facilities of {{ $result_count }} found </h2>
+					@endif
 				<div class="row add_bottom_30">
+
+					{{-- @if($searched_ward)
+						Searching {{ $searched_name ? $searched_name . " in " : }} {{ $searched_ward }}		
+						@if($searched_lga)
+							, {{ $searched_lga }}
+						@elseif($searched_name)					
+						
+						@endif	
+					@elseif($searched_lga)
+					
+					@elseif($searched_name)					
+					
+					@endif --}}
+					
 					@foreach($facilities as $facility)
 					
 						@include('layouts.partials.facility')
