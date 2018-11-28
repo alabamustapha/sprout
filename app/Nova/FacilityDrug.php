@@ -3,26 +3,27 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\BelongsTo;
+use Vyuldashev\NovaMoneyField\Money;
+use Laravel\Nova\Fields\Number;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class HealthFacility extends Resource
+class FacilityDrug extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\HealthFacility';
+    public static $model = 'App\FacilityDrug';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -44,27 +45,13 @@ class HealthFacility extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')->withMeta(['extraAttributes' => [
-                'editable' => 'false']
-            ]),
+            BelongsTo::make('HealthFacility', 'healthFacility')->sortable(),
 
-            Text::make('Type')->withMeta(['extraAttributes' => [
-                'editable' => 'false']
-            ]),
+            BelongsTo::make('Drug', 'drug')->sortable(),
 
-            Text::make('Ownership')->withMeta(['extraAttributes' => [
-                'editable' => 'false']
-            ]),
+            Money::make('Unit Price', 'NGN'),
 
-            BelongsTo::make('Facility Manager', 'owner')
-                ->nullable(),
-
-            Text::make('Phone')
-                ->sortable()
-                ->rules('required', 'min:11', 'max:13'),
-
-            TextArea::make('Address')
-                ->rules('required'),
+            Number::make('Quantity')->sortable(),
         ];
     }
 

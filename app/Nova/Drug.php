@@ -4,7 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Currency;
+use Vyuldashev\NovaMoneyField\Money;
 use Laravel\Nova\Fields\Number;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -45,8 +45,8 @@ class Drug extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Name')->sortable(),
-            Currency::make('Unit Price'),
-            Number::make('Quantity')->sortable(),
+            Money::make('Unit Price', 'NGN'),
+            // Number::make('Quantity')->sortable(),
         ];
     }
 

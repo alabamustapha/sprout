@@ -3,24 +3,25 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Ward extends Resource
+class Designation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Ward';
+    public static $model = 'App\Designation';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -41,6 +42,11 @@ class Ward extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name')
+                ->rules('required', 'max:254')
+                ->creationRules('unique:designations,name')
+                ->updateRules('unique:designations,name,{{resourceId}}'),
         ];
     }
 
