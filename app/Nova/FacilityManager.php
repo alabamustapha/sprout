@@ -3,6 +3,11 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Place;
+use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Country;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -41,7 +46,61 @@ class FacilityManager extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Avatar::make('Image')->disk('public'),
+
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Username')
+                ->sortable()
+                ->rules('max:255'),
+
+            Text::make('Email')
+                ->sortable()
+                ->rules('required', 'email', 'max:254'),
+
+            Text::make('Phone')
+                ->sortable()
+                ->rules('required', 'min:11', 'max:13'),
+
+            $this->addressFields(),
+
+            Password::make('Password')
+                ->onlyOnForms()
+                ->creationRules('required', 'string', 'min:6')
+                ->updateRules('nullable', 'string', 'min:6'),
         ];
+    }
+
+
+    protected function addressFields()
+    {
+        return $this->merge([
+
+            Place::make('Address', 'address_line_1')
+                ->rules('required')
+                ->hideFromIndex(),
+
+            Text::make('Address Line 2')->hideFromIndex(),
+
+            Text::make('LGA')
+                ->sortable()
+                ->rules('required')
+                ->hideFromIndex(),
+
+            Text::make('State')
+                ->rules('required')
+                ->hideFromIndex(),
+
+            Text::make('Postal Code')->hideFromIndex(),
+
+            Country::make('Country')
+                ->rules('required')
+                ->hideFromIndex(),
+
+        ]);
     }
 
     /**
