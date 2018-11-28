@@ -5,7 +5,10 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\Select;
+// use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Fields\Password;
 
 class User extends Resource
@@ -44,11 +47,16 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            // Gravatar::make(),
+            Avatar::make('Image')->disk('public'),
 
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
+
+            Text::make('Username')
+                ->sortable()
+                ->rules('max:255'),
 
             Text::make('Email')
                 ->sortable()
@@ -60,6 +68,17 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            Text::make('Phone')
+                ->sortable()
+                ->rules('required', 'min:11', 'max:13'),
+
+            TextArea::make('Address'),
+
+            Select::make('Role')->options([
+                '1' => 'Administrator',
+                '2' => 'Facility Manager',
+            ])->displayUsingLabels(),
         ];
     }
 

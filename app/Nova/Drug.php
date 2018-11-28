@@ -31,7 +31,7 @@ class Drug extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**

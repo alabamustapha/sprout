@@ -48,7 +48,7 @@ class OperatingHour extends Resource
 
             BelongsTo::make('HealthFacility', 'healthFacility'),
 
-            Select::make('Size')->options([
+            Select::make('Day')->options([
                 '1' => 'Sunday',
                 '2' => 'Monday',
                 '3' => 'Tuesday',

@@ -20,6 +20,12 @@ class Practitioner extends Model
     protected $hidden = [
     ];
 
+    protected $casts = [
+        'created_at' => 'date',
+        'updated_at' => 'date',
+        'dob' => 'date',
+    ];
+
     public function healthFacility()
     {
         return $this->belongsTo(HealthFacility::class);
