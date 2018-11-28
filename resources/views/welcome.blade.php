@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
        <div class="col-md-12 mb-3">
@@ -61,85 +62,69 @@
 
 
 @section('footer_scripts')
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script>
 
+    
+    axios.get('/api/features')
+    .then((res)=>{
+        console.log(res.data)
 
-    let url = "https://api.grid-nigeria.org/"
-    url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna') and lga_name = 'Lere'&size=4"
-
-    const getDatasets = (url) => {
+          let resource = '<div class="card-deck mb-5">'
         
-        axios.get(url).then(response => {
-            
-            console.log(response)
-            features = response.data.features
-            
-                let resource = `
-                <div class="card-deck mb-5">
+            res.data.forEach(feature => {
+                resource += `<div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${feature.name}</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>`
+            });
+
+        resource += '</div>'
         
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${features[0].properties.name}</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${features[1].properties.name}</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${features[2].properties.name}</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${features[3].properties.name}</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
 
-                </div>                      
-                `
+        $('#facilities').append(resource)
 
-                $('#facilities').append(resource)
+        $('#load-more').attr('data-url', response.data.pager.next);
+        
+    });
 
-                $('#load-more').attr('data-url', response.data.pager.next);
-                
-        })
-    }
+    
+
+    // const getDatasets = (url) => {
+        
+    //     axios.get(url).then(response => {
+            
+    //         console.log(response)
+    //         features = response.data.features
+            
+    //           
+    //     })
+    // }
  
-    let response = getDatasets(url) // You can optionally pass other parameters as defined above
+    // let response = getDatasets(url) // You can optionally pass other parameters as defined above
 
-    console.log(response)
+    // console.log(response)
 
 
-    $(document).ready(function(){
-        $("#load-more").click(function(event){
-            event.preventDefault()
-            alert("clicked")
-            let response = getDatasets($(this).data('url')) // You can optionally pass other parameters as defined above
-        })    
+    // $(document).ready(function(){
+    //     $("#load-more").click(function(event){
+    //         event.preventDefault()
+    //         alert("clicked")
+    //         let response = getDatasets($(this).data('url')) // You can optionally pass other parameters as defined above
+    //     })    
         
-        $("[name='lga_name']").change(function(event){
-            let lga_name = $(this).val()
-            url = "https://api.grid-nigeria.org/health-facilities/?size=4&cql=state_name IN ('Kaduna') and lga_name = '" + lga_name + "'"
-            $('#facilities').empty()
+    //     $("[name='lga_name']").change(function(event){
+    //         let lga_name = $(this).val()
+    //         url = "https://api.grid-nigeria.org/health-facilities/?size=4&cql=state_name IN ('Kaduna') and lga_name = '" + lga_name + "'"
+    //         $('#facilities').empty()
             
-            getDatasets(url) // You can optionally pass other parameters as defined above
+    //         getDatasets(url) // You can optionally pass other parameters as defined above
             
-        })    
-    })
+    //     })    
+    // })
     
 
 </script>
