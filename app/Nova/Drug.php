@@ -46,7 +46,7 @@ class Drug extends Resource
             ID::make()->sortable(),
             Text::make('Name')->sortable(),
             Money::make('Unit Price', 'NGN'),
-            Number::make('Quantity')->sortable(),
+            // Number::make('Quantity')->sortable(),
         ];
     }
 
