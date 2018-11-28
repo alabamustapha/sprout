@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use GuzzleHttp\Client;
 use App\HealthFacility;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class HomeController extends Controller
 
         $facilities = HealthFacility::all()->random(9);
         $total_count = HealthFacility::count();
+        $total_patients = Patient::count();
 
         // $http = new Client;
 
@@ -46,7 +48,7 @@ class HomeController extends Controller
         // }
 
         
-        return view('welcome', compact('facilities', 'total_count'));
+        return view('welcome', compact('facilities', 'total_count', 'total_patients'));
     }
 
     public function facilities(Request $request)

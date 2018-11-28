@@ -11,11 +11,11 @@
                     </a>
                     <div class="collapse show" id="collapse_ft_1">
                         <ul class="links">
-                            <li><a href="#0">About us</a></li>
+                            <li><a href="#how-it-work">About us</a></li>
                             <li><a href="#0">Faq</a></li>
                             <li><a href="#0">Help</a></li>
-                            <li><a href="#0">My account</a></li>
-                            <li><a href="#0">Create account</a></li>
+                            <li><a href="{{ route('login') }}">My account</a></li>
+                            <li><a href="{{ route('register') }}">Create account</a></li>
                             <li><a href="#0">Contacts</a></li>
                         </ul>
                     </div>
@@ -30,12 +30,10 @@
                     </a>
                     <div class="collapse show" id="collapse_ft_2">
                         <ul class="links">
-                            <li><a href="#0">Shops</a></li>
-                            <li><a href="#0">Hotels</a></li>
-                            <li><a href="#0">Restaurants</a></li>
-                            <li><a href="#0">Bars</a></li>
-                            <li><a href="#0">Events</a></li>
-                            <li><a href="#0">Fitness</a></li>
+                            <li><a href="#0">Private</a></li>
+                            <li><a href="#0">Primary</a></li>
+                            <li><a href="#0">Secondary</a></li>
+                            <li><a href="#0">Tertiary</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,9 +47,9 @@
                     </a>
                     <div class="collapse show" id="collapse_ft_3">
                         <ul class="contacts">
-                            <li><i class="ti-home"></i>97845 Baker st. 567<br>Los Angeles - US</li>
-                            <li><i class="ti-headphone-alt"></i>+39 06 97240120</li>
-                            <li><i class="ti-email"></i><a href="#0">info@sparker.com</a></li>
+                            <li><i class="ti-home"></i>Kaduna, <em>Nigeria</em></li>
+                            <li><i class="ti-headphone-alt"></i>+2348-XXX-XXX-XXX</li>
+                            <li><i class="ti-email"></i><a href="#0">info@sprout.local</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,7 +59,7 @@
                             <div class="horizontal"></div>
                             <div class="vertical"></div>
                         </div>
-                        <h3>Keep in touch</h3>
+                        <h3>Let's keep in touch with health tips</h3>
                     </a>
                     <div class="collapse show" id="collapse_ft_4">
                         <div id="newsletter">
@@ -95,9 +93,8 @@
                             <div class="styled-select" id="lang-selector">
                                 <select>
                                     <option value="English" selected>English</option>
-                                    <option value="French">French</option>
-                                    <option value="Spanish">Spanish</option>
-                                    <option value="Russian">Russian</option>
+                                    <option value="Hausa">Hausa</option>
+                                    
                                 </select>
                             </div>
                         </li>
@@ -109,7 +106,7 @@
                     <ul id="additional_links">
                         <li><a href="#0">Terms and conditions</a></li>
                         <li><a href="#0">Privacy</a></li>
-                        <li><span>© 2018 Sparker</span></li>
+                        <li><span>© 2018 Sprout team</span></li>
                     </ul>
                 </div>
             </div>

@@ -71,7 +71,7 @@ class HealthFacility extends Model
 	
 	
 	public function getRateAttribute(){
-		return $this->reviews->avg('rate');
+		return $this->reviews->count() > 0 ? $this->reviews->avg('rate') : 'N/A';
 	}
 	
 	/**

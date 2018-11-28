@@ -2,8 +2,8 @@
 		<header class="header menu_fixed">
 			<div id="logo">
 				<a href="index.html" title="Sparker - Directory and listings template">
-					<img src="img/logo.svg" width="165" height="35" alt="" class="logo_normal">
-					<img src="img/logo_sticky.svg" width="165" height="35" alt="" class="logo_sticky"> 
+					<img src="img/sprout_white_no_bg.png" width="165" height="35" alt="" class="logo_normal">
+					<img src="img/sprout_blue.png" width="165" height="35" alt="" class="logo_sticky"> 
 				</a>
 			</div>
 			
@@ -17,8 +17,8 @@
 			</a>
 			<nav id="menu" class="main-menu">
 				<ul>
-					<li><span><a href="#0">Home</a></span></li>
-					<li><span><a href="#0">About us</a></span></li>
+					<li><span><a href="{{ route('home') }}">Home</a></span></li>
+					<li><span><a href="#how-it-work">About us</a></span></li>
 					<li><span><a href="#0">Contact us</a></span></li>
 					@guest
 					<li><span><a href="{{ route('login') }}">{{ __('Login') }}</a></span></li>
