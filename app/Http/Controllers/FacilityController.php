@@ -45,31 +45,11 @@ class FacilityController extends Controller
      * @param  \App\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $facility)
+    public function show(HealthFacility $facility)
     {
 
-        $http = new Client;
+        return view('welcome', compact('facility'));
 
-        $url = "https://api.grid-nigeria.org/health-facilities/?cql=latitude = 9.249853050000002 AND longitude = 8.46761152";
-                
-        $response = $http->get($url);
-
-        
-
-        $response = json_decode($response->getBody(), true);
-
-        dd($response);
-
-        $facility = [];
-
-        $total_count = $response["totalFeatures"];
-        foreach($response["features"] as $feature){
-            $properties = array_only($feature["properties"], ['global_id', 'latitude', 'longitude', 'lga_name', 'name', 'state_name', 'type', 'ward_name', 'ownership']);
-            array_push($facilities, $properties);
-        }
-
-        
-        return view('welcome', compact('facilities', 'total_count'));
     }
 
     /**

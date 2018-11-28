@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use App\HealthFacility;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,21 +26,24 @@ class HomeController extends Controller
     public function index()
     {
 
-        $http = new Client;
+        $facilities = HealthFacility::all()->random(9);
+        $total_count = HealthFacility::count();
 
-        $url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna')&size=3";
+        // $http = new Client;
+
+        // $url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna')&size=3";
                 
-        $response = $http->get($url);
+        // $response = $http->get($url);
 
-        $response = json_decode($response->getBody(), true);
+        // $response = json_decode($response->getBody(), true);
 
-        $facilities = [];
+        // $facilities = [];
 
-        $total_count = $response["totalFeatures"];
-        foreach($response["features"] as $feature){
-            $properties = array_only($feature["properties"], ['global_id', 'latitude', 'longitude', 'lga_name', 'name', 'state_name', 'type', 'ward_name', 'ownership']);
-            array_push($facilities, $properties);
-        }
+        // $total_count = $response["totalFeatures"];
+        // foreach($response["features"] as $feature){
+        //     $properties = array_only($feature["properties"], ['global_id', 'latitude', 'longitude', 'lga_name', 'name', 'state_name', 'type', 'ward_name', 'ownership']);
+        //     array_push($facilities, $properties);
+        // }
 
         
         return view('welcome', compact('facilities', 'total_count'));

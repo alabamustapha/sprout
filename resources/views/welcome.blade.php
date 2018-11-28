@@ -119,10 +119,10 @@
 									<small>MF</small>
 								</figure>
 								<div class="wrapper">
-									<h3><a href="{{ route('show_facility', $facility['global_id']) }}">{{ $facility['name'] }}</a></h3>
-									<small>{{ $facility['ward_name'] }}, {{ $facility['state_name'] }}</small><br>
+									<h3><a href="{{ route('show_facility', $facility->slug) }}">{{ $facility->name }}</a></h3>
+									<small>{{ $facility->ward_name }}, {{ $facility->state_name }}</small><br>
 									{{-- <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu.</p> --}}
-									<a class="address" href="https://www.google.com/maps/dir//{{ $facility['latitude'] . ',' .  $facility['longitude']}}" target="_blank">Get directions</a>
+									<a class="address" href="https://www.google.com/maps/dir//{{ $facility->latitude . ',' .  $facility->longitude}}" target="_blank">Get directions</a>
 								</div>
 								<ul>
 									<li><span class="loc_open">Now Open</span></li>

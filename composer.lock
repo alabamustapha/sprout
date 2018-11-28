@@ -4,12 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "5cbe70e283089d585c7ed6660c5b0196",
-=======
-    "hash": "f6e782fce265a5ac2d67acdfdfa4add5",
-    "content-hash": "57d0cd808abbc60598715c267a179ac7",
->>>>>>> 816c6654db34c9818cc63d5f5a5d3c2e4038185b
+    "content-hash": "4ce673ddce44cec36db68c7e9acb86c2",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1084,7 +1079,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "3f3e9f1b67293b957f5c96da00a8da56f7e263ff",
+                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
                 "shasum": null
             },
             "require": {
@@ -1581,7 +1576,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-10-01 18:56:20"
+            "time": "2018-10-01T18:56:20+00:00"
         },
         {
             "name": "moneyphp/money",
@@ -1661,7 +1656,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2018-02-16 11:04:16"
+            "time": "2018-02-16T11:04:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3629,7 +3624,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-11-22 22:33:32"
+            "time": "2018-11-22T22:33:32+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
