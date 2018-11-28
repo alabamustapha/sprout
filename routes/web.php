@@ -18,3 +18,6 @@ Route::get('/facilities/{facility}/request_ownership', 'FacilityController@assig
 Auth::routes();
 
 Route::get('/get_facilities', 'HomeController@facilities')->name('get_facilities');
+Route::get('/statistics', function(){
+    return view('statistics');
+});

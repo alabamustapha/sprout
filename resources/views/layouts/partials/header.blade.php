@@ -20,6 +20,9 @@
 					<li><span><a href="{{ route('home') }}">Home</a></span></li>
 					<li><span><a href="#how-it-work">About us</a></span></li>
 					<li><span><a href="#0">Contact us</a></span></li>
+<<<<<<< HEAD
+					<li><span><a href="#0">Statistics</a></span></li>
+=======
 					@guest
 					<li><span><a href="{{ route('login') }}">{{ __('Login') }}</a></span></li>
 					<li>
@@ -46,6 +49,7 @@
 							</div>
 						</li>
 					@endguest
+>>>>>>> d77af41eed14fb5efefaa36e6aba2c3458ca9805
 				</ul>
 			</nav>
 		</header>
