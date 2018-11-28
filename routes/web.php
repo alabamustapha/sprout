@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/facilities/{facility}', 'FacilityController@show')->name('show_facility');
 
 Auth::routes();
 
