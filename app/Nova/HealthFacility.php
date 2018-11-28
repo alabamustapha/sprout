@@ -32,7 +32,14 @@ class HealthFacility extends Resource
      */
     public static $search = [
         'name',
+        'type',
+        'phone',
     ];
+
+    public static function availableForNavigation(Request $request)
+    {
+        return Auth()->user()->role === 1;
+    }
 
     /**
      * Get the fields displayed by the resource.

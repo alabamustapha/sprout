@@ -31,7 +31,9 @@ class Practitioner extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
+        'phone',
+        'email',
     ];
 
     /**
