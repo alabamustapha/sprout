@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,7 +24,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $http = new Client;
+
+        $url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna')&size=3";
+                
+        $response = $http->get($url);
+
+        $response = json_decode($response->getBody(), true);
+
+        $facilities = [];
+
+        $total_count = $response["totalFeatures"];
+        foreach($response["features"] as $feature){
+            $properties = array_only($feature["properties"], ['global_id', 'latitude', 'longitude', 'lga_name', 'name', 'state_name', 'type', 'ward_name', 'ownership']);
+            array_push($facilities, $properties);
+        }
+
+        
+        return view('welcome', compact('facilities', 'total_count'));
     }
 
     public function facilities(Request $request)
