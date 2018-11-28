@@ -1,7 +1,7 @@
 
 		<header class="header menu_fixed">
 			<div id="logo">
-				<a href="index.html" title="Sparker - Directory and listings template">
+				<a href="{{ route('home') }}" title="Sprout">
 					<img src="img/sprout_white_no_bg.png" width="165" height="35" alt="" class="logo_normal">
 					<img src="img/sprout_blue.png" width="165" height="35" alt="" class="logo_sticky"> 
 				</a>
