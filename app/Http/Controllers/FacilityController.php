@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Facility;
 use GuzzleHttp\Client;
+use App\HealthFacility;
 use Illuminate\Http\Request;
 
 class FacilityController extends Controller
@@ -48,7 +49,7 @@ class FacilityController extends Controller
     public function show(HealthFacility $facility)
     {
 
-        return view('welcome', compact('facility'));
+        return view('detail', compact('facility'));
 
     }
 

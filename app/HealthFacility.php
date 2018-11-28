@@ -8,6 +8,8 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class HealthFacility extends Model
 {
 
+	protected $table = "health_facilities";
+
 	use Sluggable;
 
     /**
@@ -57,5 +59,19 @@ class HealthFacility extends Model
     public function owner()
     {
         return $this->belongsTo(FacilityManager::class);
-    }
+	}
+
+	public function services(){
+		return $this->belongsToMany('App\Service', 'facility_services', 'health_facility_id', 'service_id');
+	}
+	
+	/**
+	 * Get the route key for the model.
+	 *
+	 * @return string
+	 */
+	public function getRouteKeyName()
+	{
+		return 'slug';
+	}
 }

@@ -3,9 +3,10 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class HealthFacility extends Resource
@@ -31,6 +32,7 @@ class HealthFacility extends Resource
      */
     public static $search = [
         'id',
+        'name',
     ];
 
     /**
@@ -63,7 +65,7 @@ class HealthFacility extends Resource
                 ->sortable()
                 ->rules('required', 'min:11', 'max:13'),
 
-            TextArea::make('Address')
+            Textarea::make('Address')
                 ->rules('required'),
         ];
     }

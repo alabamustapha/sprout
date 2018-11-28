@@ -4,7 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "4ce673ddce44cec36db68c7e9acb86c2",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "content-hash": "5cbe70e283089d585c7ed6660c5b0196",
+=======
+    "hash": "f6e782fce265a5ac2d67acdfdfa4add5",
+>>>>>>> f25b1c629ba601cea97529505dff65d9d520d899
+    "content-hash": "57d0cd808abbc60598715c267a179ac7",
+>>>>>>> 816c6654db34c9818cc63d5f5a5d3c2e4038185b
+>>>>>>> 92d2e20cc6255c49d85f7a9cf2c681ca49eff897
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -62,6 +74,8 @@
                 "time"
             ],
             "time": "2018-10-18T22:02:21+00:00"
+<<<<<<< HEAD
+=======
         },
         {
             "name": "cocur/slugify",
@@ -190,6 +204,7 @@
                 "sluggable"
             ],
             "time": "2018-09-05T02:03:48+00:00"
+>>>>>>> f25b1c629ba601cea97529505dff65d9d520d899
         },
         {
             "name": "defuse/php-encryption",
