@@ -31,7 +31,6 @@ class HealthFacility extends Resource
      * @var array
      */
     public static $search = [
-        'id',
         'name',
     ];
 
@@ -46,9 +45,11 @@ class HealthFacility extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')->withMeta(['extraAttributes' => [
-                'disabled' => 'true']
-            ]),
+            Text::make('Name')
+                ->sortable()
+                ->withMeta(['extraAttributes' => [
+                    'disabled' => 'true']
+                ]),
 
             Text::make('Type')->withMeta(['extraAttributes' => [
                 'disabled' => 'true']
@@ -58,7 +59,7 @@ class HealthFacility extends Resource
                 'disabled' => 'true']
             ]),
 
-            BelongsTo::make('Facility Manager', 'owner')
+            BelongsTo::make('Facility Manager', 'owner', 'App\Nova\User')
                 ->nullable(),
 
             Text::make('Phone')
