@@ -63,16 +63,17 @@
 								<h1>{{ $facility->name }}</h1>
 								<a class="address" href="https://www.google.com/maps/dir//{{ $facility->latitude . ',' .  $facility->longitude}}">{{ $facility->ward_name }}, {{ $facility->state_name }}</a>
 							</div>
-							<h5 class="add_bottom_15">Amenities</h5>
+							<h5 class="add_bottom_15">Services</h5>
 							<div class="row add_bottom_30">
+							@foreach($facility->services->chunk(4) as $services)
 								<div class="col-lg-6">
 									<ul class="bullets">
-										<li>Dolorem mediocritatem</li>
-										<li>Mea appareat</li>
-										<li>Prima causae</li>
-										<li>Singulis indoctum</li>
+										@foreach($services as $service)
+											<li>{{ $service->name }}</li>
+										@endforeach
 									</ul>
 								</div>
+							@endforeach
 							</div>
 							<!-- /row -->						
 							<hr>
@@ -92,9 +93,9 @@
 								<div class="row">
 									<div class="col-lg-3">
 										<div id="review_summary">
-											<strong>8.5</strong>
+											<strong>{{ $facility->rate }}</strong>
 											<em>Superb</em>
-											<small>Based on 4 reviews</small>
+											<small>Based on {{ $facility->reviews->count() }} reviews</small>
 										</div>
 									</div>
 									<div class="col-lg-9">
@@ -150,66 +151,37 @@
 
 							<div class="reviews-container">
 
+								@foreach($facility->reviews as $review)
 								<div class="review-box clearfix">
 									<figure class="rev-thumb"><img src="img/avatar1.jpg" alt="">
 									</figure>
 									<div class="rev-content">
 										<div class="rating">
-											<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+											@for($i = 1; $i<= $review->rate; $i++)
+											<i class="icon_star voted"></i>
+											@endfor
+											@for($i = 1; $i<= 5 - $review->rate; $i++)
+											<i class="icon_star"></i>
+											@endfor
 										</div>
 										<div class="rev-info">
-											Admin – April 03, 2016:
+											{{ $review->user->name }} – {{ $review->created_at }}
 										</div>
 										<div class="rev-text">
 											<p>
-												Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
+												{{ $review->review }}
 											</p>
 										</div>
 									</div>
 								</div>
-								<!-- /review-box -->
-								<div class="review-box clearfix">
-									<figure class="rev-thumb"><img src="img/avatar2.jpg" alt="">
-									</figure>
-									<div class="rev-content">
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-										</div>
-										<div class="rev-info">
-											Ahsan – April 01, 2016:
-										</div>
-										<div class="rev-text">
-											<p>
-												Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-											</p>
-										</div>
-									</div>
-								</div>
-								<!-- /review-box -->
-								<div class="review-box clearfix">
-									<figure class="rev-thumb"><img src="img/avatar3.jpg" alt="">
-									</figure>
-									<div class="rev-content">
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-										</div>
-										<div class="rev-info">
-											Sara – March 31, 2016:
-										</div>
-										<div class="rev-text">
-											<p>
-												Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-											</p>
-										</div>
-									</div>
-								</div>
-								<!-- /review-box -->
+								@endforeach
+							
 							</div>
 							<!-- /review-container -->
 						</section>
 						<!-- /section -->
 						<hr>
-
+							@if(!$facility->reviews()->where('user_id', auth()->user()->id)->count() > 0 )
 							<div class="add-review">
 								<h5>Leave a Review</h5>
 								<form>
@@ -249,6 +221,7 @@
 									</div>
 								</form>
 							</div>
+							@endif
 					</div>
 					<!-- /col -->
 					
@@ -259,6 +232,7 @@
 								<div class="score"><span></span><strong>***</strong></div>
 							</div>
 
+							@guest
 							<div class="form-group" id="input-dates">
 								<input class="form-control" type="text" name="dates" placeholder="FullName">
 								<i class="icon_user"></i>
@@ -295,9 +269,10 @@
 									</select>
 								</div>
 							</div>
-							<a href="checkout.html" class=" add_top_30 btn_1 full-width purchase">Claim</a>
+							@endguest
+							<a href="{{ route("request_ownership", $facility->slug) }}" class=" add_top_30 btn_1 full-width purchase">Request ownership</a>
 							
-							<div class="text-center"><small>No money charged in this step</small></div>
+							<div class="text-center"><small>The account will be assigned after verification</small></div>
 						</div>
 						<ul class="share-buttons">
 							<li><a class="fb-share" href="#0"><i class="social_facebook"></i> Share</a></li>

@@ -65,6 +65,15 @@ class HealthFacility extends Model
 		return $this->belongsToMany('App\Service', 'facility_services', 'health_facility_id', 'service_id');
 	}
 	
+	public function reviews(){
+		return $this->hasMany('App\Review');
+	}
+	
+	
+	public function getRateAttribute(){
+		return $this->reviews->avg('rate');
+	}
+	
 	/**
 	 * Get the route key for the model.
 	 *

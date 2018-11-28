@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/facilities/{facility}', 'FacilityController@show')->name('show_facility');
+Route::get('/facilities/{facility}/request_ownership', 'FacilityController@assignOwner')->name('request_ownership');
 
 Auth::routes();
 

@@ -32,11 +32,13 @@
 <body>
 		
     @yield('content')
-	
+    
+    
 	<div id="toTop"></div><!-- Back to top button -->
 	
     <!-- COMMON SCRIPTS -->
     @yield('footer_scripts')  
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/common_scripts.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
 	<script src="{{ asset('assets/validate.js') }}"></script>
