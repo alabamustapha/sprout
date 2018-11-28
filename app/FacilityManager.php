@@ -13,8 +13,14 @@ class FacilityManager extends Model
 		'address',
 		'phone',
 		'password',
+		'health_facility_id',
     ];
 
     protected $hidden = [
     ];
+
+    public function healthFacility()
+    {
+    	return $this->hasOne(HealthFacility::class);
+    }
 }
