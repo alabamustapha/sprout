@@ -1,6 +1,5 @@
 <?php
 
-// use Facilities;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,5 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(Facilities::class);
+        $this->call(Designations::class);
+        $this->call(Drugs::class);
+        $this->call(Services::class);
     }
 }
