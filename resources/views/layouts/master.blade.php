@@ -20,31 +20,40 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!-- BASE CSS -->
+<<<<<<< HEAD
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/vendors.css" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     
+=======
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/vendors.css')}}" rel="stylesheet">
+
+>>>>>>> d77af41eed14fb5efefaa36e6aba2c3458ca9805
     <!-- YOUR CUSTOM CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
 		
     @yield('content')
-	
+    
+    
 	<div id="toTop"></div><!-- Back to top button -->
 	
     <!-- COMMON SCRIPTS -->
     @yield('footer_scripts')  
-    <script src="js/common_scripts.js"></script>
-	<script src="js/functions.js"></script>
-	<script src="assets/validate.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/common_scripts.js') }}"></script>
+	<script src="{{ asset('js/functions.js') }}"></script>
+	<script src="{{ asset('assets/validate.js') }}"></script>
 	
 	<!-- SPECIFIC SCRIPTS -->
-	<script src="js/animated_canvas_min.js"></script>
+	<script src="{{ asset('js/animated_canvas_min.js') }}"></script>
 
 </body>
 </html>

@@ -77,32 +77,32 @@
 						<li>
 							<a href="#">
 								<i class="icon-hospital"></i>
-								<h3>Facilities</h3>
+								<h3>{{ $total_count }} Facilities</h3>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<i class="icon-location"></i>
-								<h3>Locations</h3>
+								<h3>23 LGA</h3>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<i class="icon-ambulance"></i>
-								<h3>Emergency</h3>
+								<h3>0 Emergency Service</h3>
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<i class="icon-child"></i>
-								<h3>Patients</h3>
+								<h3>{{ $total_patients }} Patients</h3>
 								
 							</a>
 						</li>
 						<li>
 							<a href="grid-listings-filterscol.html">
 								<i class="icon-dot-3"></i>
-								<h3>***</h3>
+								<h3> and more </h3>
 							</a>
 						</li>
 					</ul>
@@ -116,6 +116,7 @@
 				<div class="row add_bottom_30">
 					@foreach($facilities as $facility)
 					
+<<<<<<< HEAD
 						<div class="col-md-4">
 							<div class="strip grid">
 								<figure>
@@ -139,6 +140,9 @@
 								</ul>
 							</div>
 						</div>
+=======
+						@include('layouts.partials.facility')
+>>>>>>> d77af41eed14fb5efefaa36e6aba2c3458ca9805
 					
 					@endforeach
 					
@@ -147,53 +151,13 @@
 				</div>
 			</div>
 			
-			<div class="call_section">
-				<div class="wrapper">
-					<div class="container margin_80_55">
-						<div class="main_title_2">
-							<span><em></em></span>
-							<h2>How it Works</h2>
-							<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-						</div>
-						<div class="row">
-							<div class="col-md-4">
-								<div class="box_how">
-									<i class="pe-7s-search"></i>
-									<h3>Search Locations</h3>
-									<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
-									<span></span>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box_how">
-									<i class="pe-7s-info"></i>
-									<h3>View Location Info</h3>
-									<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
-									<span></span>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box_how">
-									<i class="pe-7s-like2"></i>
-									<h3>Book, Reach or Call</h3>
-									<p>An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.</p>
-								</div>
-							</div>
-						</div>
-						<!-- /row -->
-			
-					</div>
-					<canvas id="hero-canvas" width="1920" height="1080"></canvas>
-				</div>
-				<!-- /wrapper -->
-			</div>
-			<!--/call_section-->
+			@include('layouts.partials.how_it_work')
 			
 			<div class="container margin_80_55">
 				<div class="main_title_2">
 					<span><em></em></span>
-					<h2>Sparker App Available</h2>
-					<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+					<h2>Sprout App</h2>
+					<p>get acces to quality health facilities at your finger tip</p>
 				</div>
 				<div class="row justify-content-center text-center">
 					<div class="col-md-6">
@@ -202,7 +166,7 @@
 							<a href="#0" class="pr-lg-2"><img src="img/app_android.svg" alt=""></a>
 							<a href="#0" class="pl-lg-2"><img src="img/app_apple.svg" alt=""></a>
 						</div>
-						<div class="add_bottom_15"><small>*An eum dolores tractatos, aeterno menandri deseruisse ut eum.</small></div>
+						<div class="add_bottom_15"><small>*download is free</small></div>
 					</div>
 				</div>
 			</div>

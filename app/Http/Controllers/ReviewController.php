@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Facility;
-use GuzzleHttp\Client;
-use App\HealthFacility;
+use App\Review;
 use Illuminate\Http\Request;
 
-class FacilityController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,33 +41,21 @@ class FacilityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Facility  $facility
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(HealthFacility $facility)
+    public function show(Review $review)
     {
-        return view('detail', compact('facility'));
-    }
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Facility  $facility
-     * @return \Illuminate\Http\Response
-     */
-    public function assignOwner(Request $request, HealthFacility $facility)
-    {
-        dd($request->all());
-        return view('detail', compact('facility'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Facility  $facility
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function edit(Facility $facility)
+    public function edit(Review $review)
     {
         //
     }
@@ -78,10 +64,10 @@ class FacilityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Facility  $facility
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Facility $facility)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -89,10 +75,10 @@ class FacilityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Facility  $facility
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Facility $facility)
+    public function destroy(Review $review)
     {
         //
     }
