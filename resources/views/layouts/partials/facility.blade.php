@@ -2,7 +2,7 @@
     <div class="strip grid">
         <figure>
             <a href="#0" class="wish_bt"></a>
-            <a href="detail-restaurant.html"><img src="img/hospital.jpg" class="img-fluid" alt="">
+            <a href="{{ route('show_facility', $facility->slug) }}"><img src="img/hospital.jpg" class="img-fluid" alt="">
                 <div class="read_more"><span>View Facility</span></div>
             </a>
             <small>{{ $facility->ward_code }}</small>
