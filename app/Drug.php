@@ -14,4 +14,8 @@ class Drug extends Model
 
     protected $hidden = [
     ];
+
+    public function healthFacilities() {
+		return $this->belongsToMany('App\HealthFacility', 'facility_drugs', 'drug_id', 'facility_id');
+	}
 }

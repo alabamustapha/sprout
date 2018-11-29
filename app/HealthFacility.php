@@ -65,6 +65,10 @@ class HealthFacility extends Model
 		return $this->belongsToMany('App\Service', 'facility_services', 'health_facility_id', 'service_id');
 	}
 
+	public function drugs(){
+		return $this->belongsToMany('App\Drug', 'facility_drugs', 'facility_id', 'drug_id');
+	}
+
 	public function reviews(){
 		return $this->hasMany('App\Review');
 	}

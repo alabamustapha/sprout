@@ -12,4 +12,8 @@ class Service extends Model
 
     protected $hidden = [
     ];
+
+    public function healthFacilities() {
+		return $this->belongsToMany('App\HealthFacility', 'facility_services', 'service_id', 'health_facility_id');
+	}
 }

@@ -19,6 +19,7 @@ class Services extends Seeder
 		'Morgue',
 		'Pediatrics',
 		'X-ray',
+		'Ambulance',
 	];
 
 
