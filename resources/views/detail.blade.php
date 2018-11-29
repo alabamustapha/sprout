@@ -50,7 +50,7 @@
 	
 	<main>		
 		<div class="hero_in ">
-		<div id="map" class="map map_single add_bottom_45"></div>
+			<div id='map' style='width: 1400px; height: 700px;'></div>
 		</div>
 		<!--/hero_in-->
 		
@@ -328,57 +328,75 @@
 	</div>
 	<!-- page -->
 	
-	<!-- Sign In Popup -->
-	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-		<div class="small-dialog-header">
-			<h3>Sign In</h3>
-		</div>
-		<form>
-			<div class="sign-in-wrapper">
-				<a href="#0" class="social_bt facebook">Login with Facebook</a>
-				<a href="#0" class="social_bt google">Login with Google</a>
-				<div class="divider"><span>Or</span></div>
-				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" name="email" id="email">
-					<i class="icon_mail_alt"></i>
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" class="form-control" name="password" id="password" value="">
-					<i class="icon_lock_alt"></i>
-				</div>
-				<div class="clearfix add_bottom_15">
-					<div class="checkboxes float-left">
-						<label class="container_check">Remember me
-						  <input type="checkbox">
-						  <span class="checkmark"></span>
-						</label>
-					</div>
-					<div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-				</div>
-				<div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
-				<div class="text-center">
-					Don’t have an account? <a href="register.html">Sign up</a>
-				</div>
-				<div id="forgot_pw">
-					<div class="form-group">
-						<label>Please confirm login email below</label>
-						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
-						<i class="icon_mail_alt"></i>
-					</div>
-					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-				</div>
-			</div>
-		</form>
-		<!--form -->
-	</div>
-	<!-- /Sign In Popup -->
+
 	
 	<div id="toTop"></div><!-- Back to top button -->
 	
 	
-  
+	<script>
+
+		mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpZHUiLCJhIjoiY2pveTNrM3ZvMTdpajNyb2R0Nmg1cG5hMCJ9.dDu8jfgjcQheDRsucflg3g';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			center: [7.4490,10.5432],
+			zoom: 14
+		});
+		let dataset;
+		let url = "https://api.grid-nigeria.org/health-facilities/"
+		fetch(url)
+		.then((res)=> res.json())
+		.then((data)=>{
+			dataset = data;
+			console.log(dataset)
+		})
+		
+		map.on('style.load', function () {
+
+map.addSource("markers", {
+	"type": "geojson",
+	"data": {
+		"type": "FeatureCollection",
+		"features": [{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [7.4490, 10.5432]
+			},
+			"properties": {
+				"title": "Medical Facility",
+				'marker-color': '#3bb2d0',
+      'marker-size': 'large',
+      'marker-symbol': 'cross'
+			}
+		}, {
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-122.414, 37.776]
+			},
+			"properties": {
+				"title": "Mapbox SF",
+				"marker-color": "#ff00ff"
+			}
+		}]
+	}
+});
+
+map.addLayer({
+	"id": "markers",
+	"type": "symbol",
+	"source": "markers",
+	"layout": {
+		"icon-image": "{marker-symbol}-15",
+		"text-field": "{title}",
+		"text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+		"text-offset": [0, 0.6],
+		"text-anchor": "top"
+	}
+});
+});
+
+				</script>
 
 @endsection
