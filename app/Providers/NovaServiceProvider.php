@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Cards\Help;
+use App\Nova\Metrics\FacilityPerLGA;
+use App\Nova\Metrics\FacilityPerWard;
+use App\Nova\Metrics\TotalFacilities;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -56,7 +59,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            new TotalFacilities,
+            new FacilityPerWard,
+            new FacilityPerLGA,
+
         ];
     }
 
