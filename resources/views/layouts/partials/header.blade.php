@@ -3,10 +3,10 @@
 			<div id="logo">
 				<a href="{{ route('home') }}" title="Sprout">
 					<img src="img/sprout_white_no_bg.png" width="165" height="35" alt="" class="logo_normal">
-					<img src="img/sprout_blue.png" width="165" height="35" alt="" class="logo_sticky"> 
+					<img src="img/sprout_blue.png" width="165" height="35" alt="" class="logo_sticky">
 				</a>
 			</div>
-			
+
 			<!-- /top_menu -->
 			<a href="#menu" class="btn_mobile">
 				<div class="hamburger hamburger--spin" id="hamburger">
@@ -19,7 +19,7 @@
 				<ul>
 					<li><span><a href="{{ route('home') }}">Home</a></span></li>
 					<li><span><a href="#how-it-work">About us</a></span></li>
-					<li><span><a href="#0">Contact us</a></span></li>
+					<li><span><a href="{{ route('complaint') }}">Contact us</a></span></li>
 					<li><span><a href="#0">Statistics</a></span></li>
 					@guest
 					<li><span><a href="{{ route('login') }}">{{ __('Login') }}</a></span></li>

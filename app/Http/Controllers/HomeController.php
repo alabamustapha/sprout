@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $facilities = HealthFacility::all()->random(9);
         $total_count = HealthFacility::count();
         $total_patients = Patient::count();
@@ -38,7 +38,7 @@ class HomeController extends Controller
         // $http = new Client;
 
         // $url = "https://api.grid-nigeria.org/health-facilities/?cql=state_name IN ('Kaduna')&size=3";
-                
+
         // $response = $http->get($url);
 
         // $response = json_decode($response->getBody(), true);
@@ -51,14 +51,14 @@ class HomeController extends Controller
         //     array_push($facilities, $properties);
         // }
 
-        
+
         return view('welcome', compact('facilities', 'total_count', 'total_patients', 'wards'));
     }
-    
+
     public function search(Request $request)
     {
-        
-        if($request->ward_name !== '' && $request->ward_name !== null){    
+
+        if($request->ward_name !== '' && $request->ward_name !== null){
             $result_count = HealthFacility::where('ward_name', $request->ward_name)->count();
             $facilities = HealthFacility::where('ward_name', $request->ward_name);
         }else if($request->has('lga_name') && $request->lga_name !== '' && $request->lga_name !== null){
@@ -74,18 +74,18 @@ class HomeController extends Controller
             $result_count = $facilities->where('name', 'LIKE', "%" . $request->name . "%")->count();
             $facilities = $facilities->where('name', 'LIKE', "%" . $request->name . "%");
         }
-        
+
         $total_count = HealthFacility::count();
         $total_patients = Patient::count();
 
         $wards = array_unique(HealthFacility::all()->pluck('ward_name')->toArray());
 
         $wards = array_sort($wards);
-        
+
         $searched_lga = $request->lga_name;
         $searched_name = $request->name;
         $searched_ward = $request->ward_name;
-        
+
         $facilities = $facilities->get()->sortBy('rate')->take(9);
 
         return view('welcome', compact('facilities', 'total_count', 'total_patients', 'wards', 'result_count', 'searched_name', 'searched_lga', 'searched_ward'));
@@ -94,5 +94,10 @@ class HomeController extends Controller
     public function facilities(Request $request)
     {
         return $request->all();
+    }
+
+    public function createComplaint()
+    {
+        return view('contact');
     }
 }

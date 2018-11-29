@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::post('/', 'HomeController@search')->name('search');
 Route::get('/facilities/{facility}', 'FacilityController@show')->name('show_facility');
@@ -22,3 +21,4 @@ Route::get('/get_facilities', 'HomeController@facilities')->name('get_facilities
 Route::get('/statistics', function(){
     return view('statistics');
 });
+Route::get('/complaint', 'HomeController@createComplaint')->name('complaint');

@@ -65,7 +65,7 @@
                             <div id="message-newsletter"></div>
                             <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
                                 <div class="form-group">
-                                    <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                                    <input type="text" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your phone number">
                                     <input type="submit" value="Submit" id="submit-newsletter">
                                 </div>
                             </form>
@@ -93,12 +93,12 @@
                                 <select>
                                     <option value="English" selected>English</option>
                                     <option value="Hausa">Hausa</option>
-                                    
+
                                 </select>
                             </div>
                         </li>
-                       
-                      
+
+
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -111,4 +111,3 @@
             </div>
         </div>
     </footer>
-    
