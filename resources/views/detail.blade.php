@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="page" class="theia-exception">
-		
+
 	{{-- <header class="header_in">
 		<div class="container">
 			<div class="row">
@@ -28,7 +28,7 @@
 					<nav id="menu" class="main-menu">
                         <ul>
                             <li><span><a href="#0">Home</a></span></li>
-                        
+
                             <li><span><a href="#0">Pages</a></span></li>
                             <li><span><a href="#0">Extra</a></span>
                                 <ul>
@@ -42,19 +42,19 @@
 			</div>
 			<!-- /row -->
 		</div>
-		<!-- /container -->		
+		<!-- /container -->
 	</header> --}}
 	<!-- /header -->
 
 	@include('layouts.partials.g_header')
-	
-	<main>		
+
+	<main>
 		<div class="hero_in ">
 			<div id='map' style='width: 1400px; height: 700px;'></div>
 		</div>
 		<!--/hero_in-->
-		
-	
+
+
 
 		<div class="container margin_60_35">
 				<div class="row">
@@ -77,18 +77,18 @@
 								</div>
 							@endforeach
 							</div>
-							<!-- /row -->						
+							<!-- /row -->
 							<hr>
-						
-					
-						
+
+
+
 							<hr>
 							<h3>Location</h3>
-							
+
 							<!-- End Map -->
 						</section>
 						<!-- /section -->
-					
+
 						<section id="reviews">
 							<h2>Reviews</h2>
 							<div class="reviews-container add_bottom_30">
@@ -177,7 +177,7 @@
 									</div>
 								</div>
 								@endforeach
-							
+
 							</div>
 							<!-- /review-container -->
 						</section>
@@ -229,7 +229,7 @@
 									<h5>Leave a Review</h5>
 									<form>
 										<div class="row">
-											
+
 											<div class="form-group col-md-6">
 												<label>Rating </label>
 												<div class="custom-select-form">
@@ -260,7 +260,7 @@
 							@endif
 					</div>
 					<!-- /col -->
-					
+
 					<aside class="col-lg-4" id="sidebar">
 						<div class="box_detail booking">
 							<div class="price">
@@ -279,12 +279,12 @@
 							</div>
 
 							<div class="form-group" id="input-dates">
-								<input class="form-control" type="text" name="dates" placeholder="Password">
+								<input class="form-control" type="password" name="dates" placeholder="Password">
 								<i class="icon_lock"></i>
 							</div>
 
 							<div class="form-group" id="input-dates">
-								<input class="form-control" type="text" name="dates" placeholder="Confirm Password">
+								<input class="form-control" type="password" name="dates" placeholder="Confirm Password">
 								<i class="icon_lock"></i>
 							</div>
 
@@ -293,12 +293,12 @@
 								<i class="icon_phone"></i>
 							</div>
 
-							
+
 
 							<div class="form-group clearfix">
 								<div class="custom-select-form">
 									<select class="wide">
-										<option>Gender</option>	
+										<option>Gender</option>
 										<option>Male</option>
 										<option>Female</option>
 										<option>Others</option>
@@ -307,7 +307,7 @@
 							</div>
 							@endguest
 							<a href="{{ route("request_ownership", $facility->slug) }}" class=" add_top_30 btn_1 full-width purchase">Request ownership</a>
-							
+
 							<div class="text-center"><small>The account will be assigned after verification</small></div>
 						</div>
 						<ul class="share-buttons">
@@ -320,13 +320,14 @@
 				<!-- /row -->
 		</div>
 		<!-- /container -->
-		
+
 	</main>
 	<!--/main-->
-	
+
 	@include('layouts.partials.footer')
 	</div>
 	<!-- page -->
+<<<<<<< HEAD
 	
 
 	
@@ -398,5 +399,60 @@ map.addLayer({
 });
 
 				</script>
+=======
+
+	<!-- Sign In Popup -->
+	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+		<div class="small-dialog-header">
+			<h3>Sign In</h3>
+		</div>
+		<form>
+			<div class="sign-in-wrapper">
+				<a href="#0" class="social_bt facebook">Login with Facebook</a>
+				<a href="#0" class="social_bt google">Login with Google</a>
+				<div class="divider"><span>Or</span></div>
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" class="form-control" name="email" id="email">
+					<i class="icon_mail_alt"></i>
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control" name="password" id="password" value="">
+					<i class="icon_lock_alt"></i>
+				</div>
+				<div class="clearfix add_bottom_15">
+					<div class="checkboxes float-left">
+						<label class="container_check">Remember me
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+				</div>
+				<div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
+				<div class="text-center">
+					Don’t have an account? <a href="register.html">Sign up</a>
+				</div>
+				<div id="forgot_pw">
+					<div class="form-group">
+						<label>Please confirm login email below</label>
+						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
+						<i class="icon_mail_alt"></i>
+					</div>
+					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+				</div>
+			</div>
+		</form>
+		<!--form -->
+	</div>
+	<!-- /Sign In Popup -->
+
+	<div id="toTop"></div><!-- Back to top button -->
+
+
+
+>>>>>>> d219fc49e781c3ed6bbef0276f763fef793faa0f
 
 @endsection

@@ -17,6 +17,7 @@ class CreatePatientsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('phone')->nullable();
+            $table->integer('sex')->default(3);
             $table->dateTime('dob')->nullable();
             $table->timestamps();
         });

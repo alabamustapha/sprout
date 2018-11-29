@@ -34,7 +34,9 @@ class Facilities extends Seeder
             $facility = HealthFacility::where('global_id', $properties['global_id'])->get();
 
             if($facility->count() == 0){
-                HealthFacility::create($properties);
+                // HealthFacility::create($properties);
+                $hf = new HealthFacility($properties);
+                $hf->save();
             }else{
                 // $facility->update($properties);
             }
@@ -57,7 +59,9 @@ class Facilities extends Seeder
                 $facility = HealthFacility::where('global_id', $properties['global_id'])->get();
 
                 if($facility->count() == 0){
-                    HealthFacility::create($properties);
+                    // HealthFacility::create($properties);
+                    $hf = new HealthFacility($properties);
+                    $hf->save();
                 }else{
                     // $facility->update($properties);
                 }

@@ -4,6 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+=======
+    "hash": "88efe05b78c03896f5843c3519a5c0f9",
+>>>>>>> d219fc49e781c3ed6bbef0276f763fef793faa0f
     "content-hash": "4ce673ddce44cec36db68c7e9acb86c2",
     "packages": [
         {
@@ -61,7 +65,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-10-18T22:02:21+00:00"
+            "time": "2018-10-18 22:02:21"
         },
         {
             "name": "cocur/slugify",
@@ -189,7 +193,7 @@
                 "slug",
                 "sluggable"
             ],
-            "time": "2018-09-05T02:03:48+00:00"
+            "time": "2018-09-05 02:03:48"
         },
         {
             "name": "defuse/php-encryption",
@@ -1079,7 +1083,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
+                "reference": "3f3e9f1b67293b957f5c96da00a8da56f7e263ff",
                 "shasum": null
             },
             "require": {
@@ -1576,7 +1580,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-10-01T18:56:20+00:00"
+            "time": "2018-10-01 18:56:20"
         },
         {
             "name": "moneyphp/money",
@@ -1656,7 +1660,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2018-02-16T11:04:16+00:00"
+            "time": "2018-02-16 11:04:16"
         },
         {
             "name": "monolog/monolog",
@@ -3624,7 +3628,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-11-22T22:33:32+00:00"
+            "time": "2018-11-22 22:33:32"
         },
         {
             "name": "zendframework/zend-diactoros",

@@ -38,8 +38,8 @@ class HealthFacilityPolicy
         return ($hf->owner && $user->id === $hf->owner->id) || (int)$user->role === 1;
     }
 
-    // public function update(User $user, HealthFacility $hf)
-    // {
-    //     return $user->role === 1 || ($user->healthFacility() && $user->healthFacility()->id === $hf->id);
-    // }
+    public function update(User $user, HealthFacility $hf)
+    {
+        return $user->role === 1 || ($user->healthFacility() && $user->healthFacility()->id === $hf->id);
+    }
 }
