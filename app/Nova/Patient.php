@@ -47,7 +47,9 @@ class Patient extends Resource
         return [
             ID::make()->sortable(),
 
-            $this->healthFacility(),
+            BelongsTo::make('HealthFacilities', 'healthFacility')
+                ->searchable()
+                ->sortable(),
 
             Text::make('Name')
                 ->sortable()
