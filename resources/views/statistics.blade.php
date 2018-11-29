@@ -134,7 +134,7 @@
 			zoom: 4
 		});
 		let dataset;
-		let url = "https://api.grid-nigeria.org/health-facilities/"
+		let url = "https://api.grid-nigeria.org/schools/?size=10&page=1&sort_by=global_id&fields=&cql=state_name+IN+%28%27Kaduna%27%2C+%27Kaduna%27%29"
 		fetch(url)
 		.then((res)=> res.json())
 		.then((data)=>{
@@ -146,32 +146,7 @@
 
 map.addSource("markers", {
 	"type": "geojson",
-	"data": {
-		"type": "FeatureCollection",
-		"features": [{
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [7.4490, 10.5432]
-			},
-			"properties": {
-				"title": "Medical Facility",
-				'marker-color': '#3bb2d0',
-      'marker-size': 'large',
-      'marker-symbol': 'hospital'
-			}
-		}, {
-			"type": "Feature",
-			"geometry": {
-				"type": "Point",
-				"coordinates": [-122.414, 37.776]
-			},
-			"properties": {
-				"title": "Mapbox SF",
-				"marker-color": "#ff00ff"
-			}
-		}]
-	}
+	"data": `${dataset}`
 });
 
 map.addLayer({
