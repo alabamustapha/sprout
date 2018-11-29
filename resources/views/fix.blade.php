@@ -50,7 +50,7 @@
 
 	<main>
 		<div class="hero_in ">
-			<div id='map' style='width: 1400px; height: 700px;'></div>
+			<div id='map' style='width: 100%; height: 700px;'></div>
 		</div>
 		<!--/hero_in-->
 
