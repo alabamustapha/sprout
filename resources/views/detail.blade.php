@@ -380,5 +380,70 @@
 
 
 
+	<script>
+
+		mapboxgl.accessToken = 'pk.eyJ1Ijoic2FpZHUiLCJhIjoiY2pveTNrM3ZvMTdpajNyb2R0Nmg1cG5hMCJ9.dDu8jfgjcQheDRsucflg3g';
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			center: ['{{$facility->longitude}}','{{$facility->latitude}}'],
+			zoom: 14
+		});
+		let dataset;
+		let url = "https://api.grid-nigeria.org/health-facilities/"
+		fetch(url)
+		.then((res)=> res.json())
+		.then((data)=>{
+			dataset = data;
+			console.log(dataset)
+		})
+		
+		map.on('style.load', function () {
+
+map.addSource("markers", {
+	"type": "geojson",
+	"data": {
+		"type": "FeatureCollection",
+		"features": [{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": ['{{$facility->longitude}}', '{{$facility->latitude}}']
+			},
+			"properties": {
+				"title": '{{$facility->name}}',
+				'marker-color': '#3bb2d0',
+      			'marker-size': 'large',
+      			'marker-symbol': 'hospital'
+			}
+		}, {
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-122.414, 37.776]
+			},
+			"properties": {
+				"title": "Mapbox SF",
+				"marker-color": "#ff00ff"
+			}
+		}]
+	}
+});
+
+map.addLayer({
+	"id": "markers",
+	"type": "symbol",
+	"source": "markers",
+	"layout": {
+		"icon-image": "{marker-symbol}-15",
+		"text-field": "{title}",
+		"text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+		"text-offset": [0, 0.6],
+		"text-anchor": "top"
+	}
+});
+});
+
+				</script>
 
 @endsection
